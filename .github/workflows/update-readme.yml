@@ -1,0 +1,37 @@
+# Rebuilds the demo table in README.md from the portfolio's projects.json.
+# Runs daily and on demand (Actions tab -> "Update profile README" -> Run workflow).
+name: Update profile README
+on:
+  schedule:
+    - cron: "17 11 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild demo table
+        run: |
+          python3 - <<'PY'
+          import json, re, urllib.request
+          url = "https://leglsm.github.io/portfolio/projects.json"
+          data = json.load(urllib.request.urlopen(url, timeout=30))
+          rows = ["| Demo | What it shows | Live | Code |", "|---|---|---|---|"]
+          for p in data["projects"]:
+              text = p.get("readme") or re.sub(r"<[^>]+>", "", p["summary"])
+              rows.append(f"| **{p['title']}** | {text} | [Open]({p['demo']}) | [Repo]({p['code']}) |")
+          table = "\n".join(rows)
+          md = open("README.md", encoding="utf-8").read()
+          new = re.sub(r"<!-- PROJECTS:START -->.*?<!-- PROJECTS:END -->",
+                       "<!-- PROJECTS:START -->\n" + table + "\n<!-- PROJECTS:END -->", md, flags=re.S)
+          open("README.md", "w", encoding="utf-8").write(new)
+          PY
+      - name: Commit if changed
+        run: |
+          if git diff --quiet; then echo "No changes"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Update demo table from projects.json"
+          git push
