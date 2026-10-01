@@ -14,6 +14,7 @@ Each demo opens in the browser with fictional sample data. No login needed.
 | **Shortage Risk** | Red-parts early warning: planning DOH cross-checked with actual issues, one ranked risk list linked to bin locations | [Open](https://leglsm.github.io/shortage-risk-demo/) | [Repo](https://github.com/leglsm/shortage-risk-demo) |
 | **RackScan** | Rack damage on a 3D warehouse layout: point to the damaged upright or beam, log it with a photo, track the repair | [Open](https://leglsm.github.io/rackscan-demo/) | [Repo](https://github.com/leglsm/rackscan-demo) |
 | **WMS LX03 Viewer** | SAP WM bin stock as a warehouse map: where every part is, how many HUs, how old | [Open](https://leglsm.github.io/wms-lx03/) | [Repo](https://github.com/leglsm/wms-lx03) |
+| **Engine Line Andon** | 4 lines × 6 stations: scan-gated work instructions, wrong-engine/part lockout, andon calls on the office board, engine traceability (real system: ~20% less downtime) | [Open](https://leglsm.github.io/assembly-andon-demo/) | [Repo](https://github.com/leglsm/assembly-andon-demo) |
 <!-- PROJECTS:END -->
 
 Each repo's README follows the same story: **Problem → Approach → Result**.
