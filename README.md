@@ -16,7 +16,7 @@ Each demo opens in the browser with fictional sample data. No login needed.
 | **WMS LX03 Viewer** | SAP WM bin stock as a warehouse map: where every part is, how many HUs, how old | [Open](https://leglsm.github.io/wms-lx03/) | [Repo](https://github.com/leglsm/wms-lx03) |
 | **Engine Line Andon** | 4 lines × 6 stations: scan-gated work instructions, wrong-engine/part lockout, andon calls on the office board, engine traceability (real system: ~20% less downtime) | [Open](https://leglsm.github.io/assembly-andon-demo/) | [Repo](https://github.com/leglsm/assembly-andon-demo) |
 | **Pull Pack-out Planner** | Targeted cycle count + pull pack-out order for an EPP curing room (real change: warehouse held ~90%, no added indirect labor) | [Open](https://leglsm.github.io/pull-packout-demo/) | [Repo](https://github.com/leglsm/pull-packout-demo) |
-| **PFEP Console** | Package database console: spreadsheet validation, signed-form ingest, systematic-error fixes, part lifecycle 2×2 and a 3D high-bay with lanes to free (real tool, current role) | [Open](https://leglsm.github.io/pfep-console-demo/) | [Repo](https://github.com/leglsm/pfep-console-demo) |
+| **PFEP Console** | Package database console: spreadsheet validation, signed-form ingest, systematic-error fixes, part lifecycle 2×2, a 3D high-bay with lanes to free, and a TV showcase that flies to urgent parts (real tool, current role) | [Open](https://leglsm.github.io/pfep-console-demo/) | [Repo](https://github.com/leglsm/pfep-console-demo) |
 <!-- PROJECTS:END -->
 
 Each repo's README follows the same story: **Problem → Approach → Result**.
